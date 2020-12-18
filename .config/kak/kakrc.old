@@ -1,0 +1,66 @@
+colorscheme palenight
+
+eval %sh{kak-lsp --kakoune -s $kak_session}
+source "%val{config}/plugins/plug.kak/rc/plug.kak"
+
+lsp-enable
+syntax enable
+
+map global normal <c-l> ': enter-user-mode lsp<ret>'
+
+set global lsp_insert_spaces true
+set global lsp_tab_size 2
+map global ; :
+
+#hook global WinSetOption filetype=(c|cpp) %{
+#  clang-enable-autocomplete; clang-enable-diagnostics;
+#
+#  # set clang include path
+#  evaluate-commands %sh{
+#    git_root=`git rev-parse --show-toplevel`
+#    # TODO Add all subdirs of dependencies
+#    printf 'set buffer clang_options "-I. -I%s/software/include";' "${git_root}"
+#  }
+#}
+
+hook global WinSetOption filetype=(c|cpp) %{
+  #hook window BufWritePre .* lsp-formatting-sync
+}
+
+hook global WinSetOption filetype=python %{
+  set buffer tabstop 4
+  set buffer indentwidth 4
+  set buffer lsp_insert_spaces true
+  set buffer lsp_tab_size 4
+  hook window BufWritePre .* lsp-formatting-sync
+}
+
+hook global WinSetOption filetype=rust %{
+  rust-enable-autocomplete
+  hook window BufWritePre .* lsp-formatting-sync
+}
+
+hook global WinSetOption filetype=(asciidoc|markdown) %{
+  set window autowrap_column 80
+  autowrap-enable
+}
+
+set-option global modelinefmt '{yellow}%opt{out_of_view_status_line}{default} {{mode_info}} {magenta}%val{client}{default} at {yellow}%val{session}{default} on {green}%val{bufname}{default} {{context_info}} {cyan}%val{cursor_line}{default}:{cyan}%val{cursor_char_column}{default}'
+
+  # Highlighters
+  add-highlighter global/number-lines number-lines
+  add-highlighter global/show-matching show-matching
+  add-highlighter global/show-whitespaces show-whitespaces
+
+  # Live reload
+  set-option global autoreload yes
+
+  # Fix LiveReload
+  set-option global writemethod replace
+
+  # Windowing
+  hook global ModuleLoaded x11 %{
+    set-option global termcmd 'alacritty -e dash -c'
+  }
+
+  # Tools

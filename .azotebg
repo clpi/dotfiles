@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+pkill swaybg
+swaybg -o* -i '/usr/share/backgrounds/fedora-workstation/aurora-over-iceland.png' -m fill &

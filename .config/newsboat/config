@@ -1,0 +1,94 @@
+auto-reload yes
+# browser qutebrowser
+browser "/usr/bin/w3m"
+
+download-path "/home/chrisp/doc/news/"
+max-downloads 10
+notify-always yes
+notify-format "newsboat: %n unread articles (%f feeds)"
+notify-program notify-send
+#notify-xterm no
+#notify-screen no
+player mpv
+refresh-on-startup yes
+reload-time 20
+reload-threads 4
+download-retries 4
+download-timeout 10
+prepopulate-query-feeds yes
+show-read-articles yes
+show-read-feeds yes
+show-keymap-hint true
+swap-title-and-hints false
+goto-next-feed no
+
+# external-url-viewer "/usr/bin/urlview"
+pager internal
+# html-renderer "/usr/bin/w3m"
+
+bind-key j next
+bind-key k prev
+
+bind-key J next-feed
+bind-key K prev-feed
+
+bind-key k up article
+bind-key j down article
+
+bind-key J next article
+bind-key K prev article
+
+bind-key j down
+bind-key k up
+bind-key h quit
+bind-key l open
+
+bind-key \ reload-all
+#bind-key "SPACE" open
+
+# unbind-key l
+# bind-key h prev-dialog
+# bind-key l next-dialog
+bind-key ; toggle-show-read-feeds
+bind-key <Backspace> prev-dialog
+bind-key t set-tag
+bind-key d close-dialog
+bind-key "SPACE" view-dialogs
+
+# bookmark-cmd ~/.newsbeuter/bookmark.sh
+# bookmark-interactive no
+# bookmark-autopilot yes
+
+ignore-article "*" "title =~ \"Sponsor\""
+ignore-article "*" "title =~ \"Advertisement\""
+ignore-article "*" "title =~ \"Ad\""
+ignore-mode "display"
+articlelist-format "%4i %f %D  %?T?|%-17T| ?%t"
+
+
+macro y set browser "mpv %u"; open-in-browser ; set browser "elinks %u"
+macro o set browser "vimprobable2 %u"; open-in-browser ; set browser "elinks %u"
+
+articlelist-format "%4i  %f  %D  %?T?|%-17T| ?%t"
+datetime-format "%F %T"
+
+
+articlelist-format "%4i %f %D  %?T?|%-17T| ?%t"
+highlight feedlist    "^  *[0-9]+  *N  "                    color253 color8
+highlight articlelist "^  *[0-9]+  *N  "                    color253 color8
+
+highlight article "^(Title):.*$" blue default
+highlight article "https?://[^ ]+" red default
+highlight article "\\[image\\ [0-9]+\\]" green default
+
+color listnormal       color253 default
+color listfocus        color236   color122
+color listfocus_unread color236   color122    bold
+color listnormal_unread  color253 default     bold
+color info             color236   color120
+color background       color253 default
+color article          color253 default
+
+
+cleanup-on-quit no
+confirm-exit no

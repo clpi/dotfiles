@@ -1,0 +1,179 @@
+2020-10-17 16:11:32		New key binding (context "default"): meta2-1;5P => /bar scroll buflist * -100%
+2020-10-17 16:11:32		New key binding (context "default"): meta2-1;5Q => /bar scroll buflist * +100%
+2020-10-17 16:11:32		New key binding (context "default"): meta-meta-OQ => /bar scroll buflist * e
+2020-10-17 16:11:32		New key binding (context "default"): meta2-1;3Q => /bar scroll buflist * e
+2020-10-17 16:11:32		New key binding (context "default"): meta2-1;3P => /bar scroll buflist * b
+2020-10-17 16:11:32		New key binding (context "default"): meta-meta-OP => /bar scroll buflist * b
+2020-10-17 16:11:32		New key binding (context "default"): meta-OQ => /bar scroll buflist * +100%
+2020-10-17 16:11:32		New key binding (context "default"): meta-OP => /bar scroll buflist * -100%
+2020-10-17 16:11:32		New key binding (context "default"): meta-meta2-12~ => /bar scroll buflist * e
+2020-10-17 16:11:32		New key binding (context "default"): meta-meta2-11~ => /bar scroll buflist * b
+2020-10-17 16:11:32		New key binding (context "default"): meta2-12^ => /bar scroll buflist * +100%
+2020-10-17 16:11:32		New key binding (context "default"): meta2-12~ => /bar scroll buflist * +100%
+2020-10-17 16:11:32		New key binding (context "default"): meta2-11^ => /bar scroll buflist * -100%
+2020-10-17 16:11:32		New key binding (context "default"): meta2-11~ => /bar scroll buflist * -100%
+2020-10-17 16:11:32		Plugins loaded: alias, buflist, charset, exec, fifo, fset, guile, irc, logger, lua, perl, python, relay, ruby, script, spell, tcl, trigger, xfer
+2020-10-17 16:14:08		[core]
+2020-10-17 16:14:08		  away     debug    key      proxy    set      window 
+2020-10-17 16:14:08		  bar      eval     layout   quit     unset  
+2020-10-17 16:14:08		  buffer   filter   mouse    reload   upgrade
+2020-10-17 16:14:08		  color    help     mute     repeat   uptime 
+2020-10-17 16:14:08		  command  history  plugin   save     version
+2020-10-17 16:14:08		  cursor   input    print    secure   wait   
+2020-10-17 16:14:08		[xfer]
+2020-10-17 16:14:08		  me  xfer
+2020-10-17 16:14:08		[logger]
+2020-10-17 16:14:08		  logger
+2020-10-17 16:14:08		[fifo]
+2020-10-17 16:14:08		  fifo
+2020-10-17 16:14:08		[ruby]
+2020-10-17 16:14:08		  ruby
+2020-10-17 16:14:08		[guile]
+2020-10-17 16:14:08		  guile
+2020-10-17 16:14:08		[irc]
+2020-10-17 16:14:08		  admin       ison        part        squit     
+2020-10-17 16:14:08		  allchan     join        ping        stats     
+2020-10-17 16:14:08		  allpv       kick        pong        summon    
+2020-10-17 16:14:08		  allserv     kickban     query       time      
+2020-10-17 16:14:08		  ban         kill        quiet       topic     
+2020-10-17 16:14:08		  cap         links       quote       trace     
+2020-10-17 16:14:08		  connect     list        reconnect   unban     
+2020-10-17 16:14:08		  ctcp        lusers      rehash      unquiet   
+2020-10-17 16:14:08		  cycle       map         remove      userhost  
+2020-10-17 16:14:08		  dcc         me          restart     users     
+2020-10-17 16:14:08		  dehalfop    mode        sajoin      version   
+2020-10-17 16:14:08		  deop        motd        samode      voice     
+2020-10-17 16:14:08		  devoice     msg         sanick      wallchops 
+2020-10-17 16:14:08		  die         names       sapart      wallops   
+2020-10-17 16:14:08		  disconnect  nick        saquit      who       
+2020-10-17 16:14:08		  halfop      notice      server      whois     
+2020-10-17 16:14:08		  ignore      notify      service     whowas    
+2020-10-17 16:14:08		  info        op          servlist  
+2020-10-17 16:14:08		  invite      oper        squery    
+2020-10-17 16:14:08		[python]
+2020-10-17 16:14:08		  python
+2020-10-17 16:14:08		[exec]
+2020-10-17 16:14:08		  exec
+2020-10-17 16:14:08		[trigger]
+2020-10-17 16:14:08		  trigger
+2020-10-17 16:14:08		[alias]
+2020-10-17 16:14:08		  AAWAY    CHAT     K        N        UB       WII    
+2020-10-17 16:14:08		  alias    CL       KB       Q        UMODE    WM     
+2020-10-17 16:14:08		  ANICK    CLOSE    LEAVE    REDRAW   V        WW     
+2020-10-17 16:14:08		  BEEP     EXIT     M        SAY      W      
+2020-10-17 16:14:08		  BYE      IG       MSGBUF   SIGNOFF  WC     
+2020-10-17 16:14:08		  C        J        MUB      T        WI     
+2020-10-17 16:14:08		[spell]
+2020-10-17 16:14:08		  spell
+2020-10-17 16:14:08		[tcl]
+2020-10-17 16:14:08		  tcl
+2020-10-17 16:14:08		[buflist]
+2020-10-17 16:14:08		  buflist
+2020-10-17 16:14:08		[lua]
+2020-10-17 16:14:08		  lua
+2020-10-17 16:14:08		[fset]
+2020-10-17 16:14:08		  fset
+2020-10-17 16:14:08		[script]
+2020-10-17 16:14:08		  script
+2020-10-17 16:14:08		[charset]
+2020-10-17 16:14:08		  charset
+2020-10-17 16:14:08		[perl]
+2020-10-17 16:14:08		  perl
+2020-10-17 16:14:08		[relay]
+2020-10-17 16:14:08		  relay
+2020-10-17 16:14:16		[core]
+2020-10-17 16:14:16		  away     debug    key      proxy    set      window 
+2020-10-17 16:14:16		  bar      eval     layout   quit     unset  
+2020-10-17 16:14:16		  buffer   filter   mouse    reload   upgrade
+2020-10-17 16:14:16		  color    help     mute     repeat   uptime 
+2020-10-17 16:14:16		  command  history  plugin   save     version
+2020-10-17 16:14:16		  cursor   input    print    secure   wait   
+2020-10-17 16:14:16		[xfer]
+2020-10-17 16:14:16		  me  xfer
+2020-10-17 16:14:16		[logger]
+2020-10-17 16:14:16		  logger
+2020-10-17 16:14:16		[fifo]
+2020-10-17 16:14:16		  fifo
+2020-10-17 16:14:16		[ruby]
+2020-10-17 16:14:16		  ruby
+2020-10-17 16:14:16		[guile]
+2020-10-17 16:14:16		  guile
+2020-10-17 16:14:16		[irc]
+2020-10-17 16:14:16		  admin       ison        part        squit     
+2020-10-17 16:14:16		  allchan     join        ping        stats     
+2020-10-17 16:14:16		  allpv       kick        pong        summon    
+2020-10-17 16:14:16		  allserv     kickban     query       time      
+2020-10-17 16:14:16		  ban         kill        quiet       topic     
+2020-10-17 16:14:16		  cap         links       quote       trace     
+2020-10-17 16:14:16		  connect     list        reconnect   unban     
+2020-10-17 16:14:16		  ctcp        lusers      rehash      unquiet   
+2020-10-17 16:14:16		  cycle       map         remove      userhost  
+2020-10-17 16:14:16		  dcc         me          restart     users     
+2020-10-17 16:14:16		  dehalfop    mode        sajoin      version   
+2020-10-17 16:14:16		  deop        motd        samode      voice     
+2020-10-17 16:14:16		  devoice     msg         sanick      wallchops 
+2020-10-17 16:14:16		  die         names       sapart      wallops   
+2020-10-17 16:14:16		  disconnect  nick        saquit      who       
+2020-10-17 16:14:16		  halfop      notice      server      whois     
+2020-10-17 16:14:16		  ignore      notify      service     whowas    
+2020-10-17 16:14:16		  info        op          servlist  
+2020-10-17 16:14:16		  invite      oper        squery    
+2020-10-17 16:14:16		[python]
+2020-10-17 16:14:16		  python
+2020-10-17 16:14:16		[exec]
+2020-10-17 16:14:16		  exec
+2020-10-17 16:14:16		[trigger]
+2020-10-17 16:14:16		  trigger
+2020-10-17 16:14:16		[alias]
+2020-10-17 16:14:16		  AAWAY    CHAT     K        N        UB       WII    
+2020-10-17 16:14:16		  alias    CL       KB       Q        UMODE    WM     
+2020-10-17 16:14:16		  ANICK    CLOSE    LEAVE    REDRAW   V        WW     
+2020-10-17 16:14:16		  BEEP     EXIT     M        SAY      W      
+2020-10-17 16:14:16		  BYE      IG       MSGBUF   SIGNOFF  WC     
+2020-10-17 16:14:16		  C        J        MUB      T        WI     
+2020-10-17 16:14:16		[spell]
+2020-10-17 16:14:16		  spell
+2020-10-17 16:14:16		[tcl]
+2020-10-17 16:14:16		  tcl
+2020-10-17 16:14:16		[buflist]
+2020-10-17 16:14:16		  buflist
+2020-10-17 16:14:16		[lua]
+2020-10-17 16:14:16		  lua
+2020-10-17 16:14:16		[fset]
+2020-10-17 16:14:16		  fset
+2020-10-17 16:14:16		[script]
+2020-10-17 16:14:16		  script
+2020-10-17 16:14:16		[charset]
+2020-10-17 16:14:16		  charset
+2020-10-17 16:14:16		[perl]
+2020-10-17 16:14:16		  perl
+2020-10-17 16:14:16		[relay]
+2020-10-17 16:14:16		  relay
+2020-10-17 16:15:12		Plugins loaded:
+2020-10-17 16:15:12		  xfer: DCC file transfer and direct chat
+2020-10-17 16:15:12		  logger: Log buffers to files
+2020-10-17 16:15:12		  fifo: FIFO pipe for remote control
+2020-10-17 16:15:12		  ruby: Support of ruby scripts
+2020-10-17 16:15:12		  guile: Support of scheme scripts (with Guile)
+2020-10-17 16:15:12		  irc: IRC (Internet Relay Chat) protocol
+2020-10-17 16:15:12		  python: Support of python scripts
+2020-10-17 16:15:12		  exec: Execution of external commands in WeeChat
+2020-10-17 16:15:12		  trigger: Text replacement and command execution on events triggered by WeeChat/plugins
+2020-10-17 16:15:12		  alias: Alias commands
+2020-10-17 16:15:12		  spell: Spell checker for input
+2020-10-17 16:15:12		  tcl: Support of tcl scripts
+2020-10-17 16:15:12		  buflist: Buffers list
+2020-10-17 16:15:12		  lua: Support of lua scripts
+2020-10-17 16:15:12		  fset: Fast set of WeeChat and plugins options
+2020-10-17 16:15:12		  script: Script manager
+2020-10-17 16:15:12		  charset: Charset conversions
+2020-10-17 16:15:12		  perl: Support of perl scripts
+2020-10-17 16:15:12		  relay: Relay WeeChat data to remote application (irc/weechat protocols)
+2020-10-17 16:20:43	=!=	irc: unable to add temporary server "freenode" because the addition of temporary servers with command /connect is currently disabled
+2020-10-17 16:20:43	=!=	irc: if you want to add a standard server, use the command "/server add" (see /help server); if you really want to add a temporary server (NOT SAVED), turn on the option irc.look.temporary_servers
+2020-10-17 16:20:52	=!=	Too few arguments for command "/server add" (help on command: /help server)
+2020-10-17 16:24:07	=!=	Too few arguments for command "/server add" (help on command: /help server)
+2020-10-17 16:32:38		irc: server added: freenode
+2020-10-17 16:36:23		fifo: pipe closed
+2020-10-20 10:24:16		Plugins loaded: alias, buflist, charset, exec, fifo, fset, guile, irc, logger, lua, perl, python, relay, ruby, script, spell, tcl, trigger, xfer
+2020-10-20 11:32:52		fifo: pipe closed

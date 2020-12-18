@@ -1,0 +1,159 @@
+
+{
+    "layer": "top",
+    "position": "top",
+    "height": 25,
+    "min-height": 25,
+    "modules-left": [
+        "custom/app_menu",
+        "sway/workspaces",
+        "sway/mode",
+        "sway/window"
+    ],
+	"margin-top": 0,
+	"margin-bottom": 0,
+	"margin-left": 0,
+	"margin-right": 0,
+    "padding-left": 20,
+    "modules-center": [
+        "clock"
+    ],
+    "modules-right": [
+        "custom/crypto",
+        "network",
+        "cpu",
+        "memory",
+        "battery",
+        "pulseaudio",
+        "tray",
+        "custom/power"
+    ],
+    "sway/workspaces": {
+        "format": "{icon}",
+        "all-outputs": true,
+        "disable-scroll": false,
+        "persistent_workspaces": {
+            "1": [],
+            "2": [],
+            "3": [],
+            "4": []
+        }
+    },
+    "backlight": {
+
+    },
+    "crustom/crypto": {
+        "format": "{}",
+        "interval": 600,
+        "return-type": "json",
+        "exec": "~/.config/waybar/modules/crypto/crypto.py",
+        "exec-if": "ping pro-api.coinmarketcap.com -c1"
+    },
+    "temperature": {
+        "format-icons": [""],
+    },
+    "disk": {
+        "format-icons": ["λ"],
+    },
+    "idle_inhibitor": {
+		"format": "<span color='#cbe3e7'>{icon}</span>",
+		"format-icons": {
+			"activated": "",
+			"deactivated": ""
+		},
+		"on-click-right": "swaylock -eFfki ~/Pictures/lockscreen.jpeg"
+	},
+    "custom/app_menu": {
+        "format": "<span font-weight='800'>  {icon}  </span>",
+		"icon-size": 24,
+        "format-icons": [""],
+         "on-click": "sgtk-menu",
+         "on-click-right": "sgtk-grid",
+         "on-click-middle": "nwggrid"
+     },
+    "sway/window": {
+        "format": "<span color='#91ffaa'> </span> {}",
+        "max-length": 40,
+        "tooltip": true,
+		"on-click": "nwggrid"
+	},
+    "clock": {
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "format": "<span color='#91ffaa'></span>  {:%A, %b %d %I:%M %p}",
+        "on-click": "exec alacritty -e nvim +Calendar"
+    },
+    "cpu": {
+        "format": " {usage}%",
+        "states": {
+            "warning": 70,
+            "critical": 90
+        },
+		"on-click": "exec alacritty -e htop"
+    },
+    "network": {
+        "interval": 2,
+        "interface": "wlp4s0",
+        "format-wifi": "  {essid}",
+        "format-ethernet": "  {ifname}",
+        "format-linked": "  {ifname}",
+        "format-disconnected": "  ",
+        "tooltip-format": "{ifname}: {ipaddr}/{cidr}\n {bandwidthDownBits}\n {bandwidthUpBits}"
+    },
+    "memory": {
+        "format": " {}%",
+        "states": {
+            "warning": 70,
+            "critical": 90
+        }
+    },
+    "battery": {
+        "bat": "BAT0",
+        "states": {
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{icon}  {capacity}%",
+        "format-charging": " {capacity}%",
+        "format-alt": "{time} {icon}",
+        "format-icons": ["", "", "", "", ""]
+    },
+    "pulseaudio": {
+        "format": "{icon} {volume}% {format_source}",
+        "format-bluetooth": "{icon} {volume}% {format_source}",
+        "format-bluetooth-muted": " {icon} {format_source}",
+        "format-muted": "  {format_source}",
+        "format-source": " {volume}%",
+        "format-source-muted": "",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", "", ""]
+        },
+        "on-click": "pavucontrol"
+    },
+    "custom/power": {
+      	"format": "⏻",
+      	"on-click": "wlogout",
+      	"on-click-right": "nwgbar",
+		    "escape": true,
+    	  "tooltip": false
+    },
+    "tray": {
+        "on-click": "exec sgtk-grid"
+    },
+    "backlight": {
+        "format-icon": "L"
+    },
+    "wlr/taskbar": {
+        "format": "{icon}",
+        "icon-size": 14,
+        "tooltip-format": "{title}",
+        "on-click": "activate",
+        "on-click-right": "minimize",
+        "on-click-middle": "close"
+    }
+}

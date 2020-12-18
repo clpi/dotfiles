@@ -1,0 +1,473 @@
+set $bg      #1e1c31
+set $bg_sub      #2a283b
+set $bb      #100e23
+set $br      #1a192c
+set $bd      #19172c
+set $bdd     #15132a
+set $bl     #302e43
+set $gray    #565575
+set $cl      #cce6e9
+set $fg      #f3f3f3
+set $dfg     #a6b3cc
+set $green   #91ffaa
+set $dgreen  #55bf74
+set $ora     #ffe9aa
+set $dora    #ffb378
+set $red     #ff8080
+set $dred    #ff5458
+set $pur     #dd91ff
+set $dpur    #906cff
+set $cyan    #aaffe9
+set $dcyan   #63f2f1
+set $blue    #91ddff
+set $dblue   #65b2ff
+# set $term /home/chrisp/.cargo/bin/alacritty
+# set $term gnome-terminal
+# set $term gnome-terminal
+set $browser qutebrowser
+# set $term /home/chrisp/.cargo/bin/alacritty
+set $term alacritty
+set $wall ~/Pictures/Wallpapers/Wallpaper.jpg
+set $lock ~/Pictures/Wallpapers/LoggedOut.jpg
+
+exec autotiling
+exec kdeconnect-indicator
+exec nm-applet --indicator
+exec mako
+exec lxpolkit
+exec ~/.azotebg
+exec /usr/lib/kdeconnectd
+# exec --no-startup-id libinput-gestures
+
+
+
+# set $menu wofi --dmenu --show
+
+exec mkfifo $SWAYSOCK.wob && tail -f $SWAYSOCK.wob | wob
+
+focus_follows_mouse yes
+# swaynag_command notify-send
+
+# Set font
+font pango:SauceCodePro Nerd Font 10.5
+
+input type:keyboard {
+    xkb_options caps:escape,grp:shifts_toggle,numpad:mac
+    xkb_numlock enable
+
+}
+
+input type:touchpad {
+    events enabled
+    natural_scroll enabled
+    pointer_accel 0.7
+    tap enabled
+    dwt enabled
+    middle_emulation enabled
+}
+
+seat * hide_cursor 10000
+
+output * {
+    bg "#1e1c31" solid_color
+    # bg "#100e23" solid_color
+
+
+}
+output eDP-1 pos 1920 0 res 1920x1080
+output HDMI-A-1 pos 0 0 res 1920x1080
+
+# Gaps
+# gaps inner 5
+gaps top 3
+gaps right 3
+gaps bottom 3
+gaps left 3
+gaps inner 5
+
+smart_gaps on
+smart_borders off
+
+# Borders
+# default_floating_border normal
+hide_edge_borders smart
+default_border pixel 1
+default_floating_border none
+# hide_edge_borders none
+workspace_layout default
+
+# Disable cursor jumping
+mouse_warping none
+focus_follows_mouse no
+
+# Workspaces
+# workspace_layout tabbed
+set $loc1 workspace number 1
+set $loc2 workspace number 2
+set $loc3 workspace number 3
+set $loc4 workspace number 4
+set $loc5 workspace number 5
+set $loc6 workspace number 6
+set $loc7 workspace number 7
+set $loc8 workspace number 8
+set $loc9 workspace number 9
+set $loc0 workspace number 10
+
+# workspace number 1 output eDP-1
+# workspace number 2 output eDP-1
+# workspace number 3 output eDP-1
+# workspace number 4 output eDP-1
+# workspace number 5 output eDP-1
+# workspace number 6 output eDP-1
+# workspace number 7 output HDMI-A-1
+# workspace number 8 output HDMI-A-1
+# workspace number 9 output HDMI-A-1
+
+# Specific window configuration
+for_window    [app_id=".*"]                              sticky enable
+# for_window [title="ranger"] floating enable; focus
+
+for_window    [app_id=".*"]                              sticky enable
+
+for_window [title="~nwg"] border none
+for_window    [window_role="pop-up"]                     floating enable
+for_window [app_id="pavucontrol"] floating enable
+for_window    [app_id="udiskie"]                         floating enable
+for_window    [class="ksnip"]                            fullscreen enable
+for_window    [class="Wire"]                             move container to $loc3
+for_window    [title="Firefox - Sharing Indicator"]      floating enable
+for_window    [app_id="wofi.*"]                         floating enable, resize set width 60ppt height 80ppt
+for_window    [app_id="dmenu.*"]                         floating enable, resize set width 60ppt height 80ppt
+for_window    [app_id="dmenu-browser"]                   resize set height 20ppt
+for_window    [app_id="dmenu-calc"]                      resize set width 40ppt height 30ppt
+
+# Colors                border  bg      text    indicator child_border
+client.focused          $pur      $bg     $fg     $dgreen       $dgreen
+client.focused_inactive $bl       $br     $cl     $bl         $bl
+client.unfocused        $bl       $br     $cl     $bl         $bl
+client.urgent           $ora      $br     $cl     $ora        $ora
+client.placeholder      $br       $br     $cl   $bl         $bl
+client.background $bg
+
+# Use window and mt as a modifier keys
+set $mod Mod1
+set $mt Mod4
+
+# Use Mouse+$mt to drag floating windows to their wanted position
+floating_modifier $mt
+
+# TODO Make moving apps between workspaces mode-based so it doesn't take up valuable HJKL spots
+#
+mode passthrough {
+	bindsym $mod+Pause mode default
+}
+bindsym $mod+Bar mode passthrough
+
+set $mode_win "focus (hjkl), move (HJKL)"
+mode $mode_win {
+    bindsym --to-code {
+        Tab    workspace back_and_forth; mode default
+        Escape mode default
+    }
+}
+
+set $mode_layout "(t)ab sp(l) (s)ta (h)sp (v)sp (f)lo foc(m)ode foc(p)ar TAB baf"
+mode $mode_layout {
+    bindsym --to-code {
+        t      layout tabbed toggle; mode default
+        l      layout split toggle; mode default
+        s      layout stacking toggle; mode default
+        h      splith; mode default
+        v      splitv; mode default
+        minus            splitv; exec $term; mode default
+        shift+minus      splith; exec $term; mode default
+        f      floating toggle; exec notify-send "Floating toggled"; mode default
+        m      focus mode_toggle; exec notify-send "Focus toggled"; mode default
+        p      focus parent; exec notify-send "Parent focus"; mode default
+        Tab    workspace back_and_forth; mode default
+        Escape mode default
+    }
+}
+
+set $mode_cmd "Cmd"
+mode $mode_cmd {
+    bindsym --to-code {
+        a           exec alacritty; mdoe default
+        $mt+a       floating toggle; exec alacritty; mdoe default
+        k           exec kitty; mode default
+        $mt+k       floating toggle; exec kitty; mode default
+        t           exec gnome-terminal; mode default
+        $mt+t        flaoting toggle; exec gnome-terminal; mode default
+        d           exec wofi --show drun; mode default
+        c           exec wofi --show run -L 20; mode default
+        $mt+c       exec wofi --show run -L 20; mode default
+        f           exec alacritty -e "vim $(sk)";  mode default
+        $mt+f       exec alacritty -e "vim &(fzf)"; mode default
+        n   exec alacritty -e ranger; mode default
+        v   exec alacritty -e nvim; mode default
+        s   exec gnome-control-center; mode default
+        Shift+k   exec kdeconnect-app; mode default
+        Space exec nwgggrid; mode default
+        Escape mode default
+    }
+
+}
+
+
+set $mode_audio "Audio"
+mode $mode_audio {
+    bindsym --to-code {
+        s            exec pacmd set-sink-port alsa_output.pci-0000_00_1f.3.analog-stereo analog-output-speaker, mode "default"
+        h            exec pacmd set-sink-port alsa_output.pci-0000_00_1f.3.analog-stereo analog-output-headphones, mode "default"
+        b            exec "bluetoothctl disconnect 20:74:CF:37:0B:0B; bluetoothctl connect 20:74:CF:37:0B:0B", mode "default"
+        Shift+i      exec pacmd set-source-port alsa_input.pci-0000_00_1f.3.analog-stereo analog-input-internal-mic, mode "default"
+        Shift+h      exec pacmd set-source-port alsa_input.pci-0000_00_1f.3.analog-stereo analog-input-headset-mic, mode "default"
+        # Shift+m      exec pacmd set-source-port alsa_input.pci-0000_00_1f.3.analog-stereo analog-input-mic, mode "default"
+
+        # back to normal: Enter or Escape
+        Return mode default
+        Escape mode default
+    }
+}
+
+set $mode_resize "Resize window"
+mode $mode_resize {
+    bindsym --to-code {
+        h            exec swaymsg resize grow   left 5 || swaymsg resize shrink right 5
+        Ctrl+h       exec swaymsg resize grow   left 1  || swaymsg resize shrink right 1
+        j            exec swaymsg resize shrink up   5 || swaymsg resize grow   down  5
+        Ctrl+j       exec swaymsg resize shrink up   1  || swaymsg resize grow   down  1
+        k            exec swaymsg resize grow   up   5 || swaymsg resize shrink down  5
+        Ctrl+k       exec swaymsg resize grow   up   1  || swaymsg resize shrink down  1
+        l            exec swaymsg resize shrink left 5 || swaymsg resize grow   right 5
+        Ctrl+l       exec swaymsg resize shrink left 1  || swaymsg resize grow   right 1
+
+        # back to normal: Enter or Escape
+        Return mode default
+        Escape mode default
+    }
+}
+
+set $mode_system "System exit"
+mode $mode_system {
+    bindsym --to-code {
+        e exec sway-exit exit, mode "default"
+        l exec sway-exit lock, mode "default"
+        s exec sway-exit suspend, mode "default"
+        r exec sway-exit reboot, mode "default"
+        h exec sway-exit shutdown, mode "default"
+
+        # back to normal: Enter or Escape
+        Return mode default
+        Escape mode default
+    }
+}
+
+set $mode_workspaces_monitors "Move workspace between monitors"
+mode $mode_workspaces_monitors {
+    bindsym --to-code {
+        h exec swaymsg move workspace to output left, mode "default"
+        l exec swaymsg move workspace to output right, mode "default"
+
+        # back to normal: Enter or Escape
+        Return mode default
+        Escape mode default
+    }
+}
+
+bindsym --to-code {
+
+    $mt+Space    mode $mode_layout
+    $mt+a        mode $mode_audio
+    $mt+c        mode $mode_cmd
+    $mt+r        mode $mode_resize
+    $mt+Alt+l    mode $mode_system
+    # Terminal
+    $mt+Return exec $term
+    $mt+Shift+Return exec qutebrowser
+    # Launcher
+    $mt+semicolon      exec  wofi --show run -p "cmd "
+    $mt+colon exec  wofi --show run -p "cmd "
+    $mt+b     exec bemenu-run -n -f
+    $mt+g     exec wofi --show drun -I -G -m --term="alacritty" -L 10
+    $mt+d     exec wofi --show drun -L 15
+    $mt+m     fullscreen disable, exec nwgdmenu -run
+    $mt+x     exec wofi --show run --term="alacritty" -L 15
+
+    $mt+Shift+d exec wofi --show run --term="alacritty" -L 15
+    $mt+Shift+c exec rofi -show run -p "cmd" -L 10
+    $mt+Shift+e exec swaylock --daemonize
+
+    Print exec grim -g "$(slurp)" - | swappy -f -
+    Ctrl+Print exec grim ~/pic/screen.png
+    Shift+Print exec grim - | swappy -f -
+    $mt+Print exec grim -g "$(slurp -p)" -t ppm - | convert - -format '%[pixel:p{0,0}]' txt:- | tail -n 1 | cut -d ' ' -f 4 | wl-copy
+
+    # Kill focused wnidow
+    $mt+Shift+q kill
+
+    # Change focus
+    $mt+h focus left
+    $mt+j focus down
+    $mt+k focus up
+    $mt+l focus right
+# move focused window
+    $mt+Shift+h move left
+    $mt+Shift+j move down
+    $mt+Shift+k move up
+    $mt+Shift+l move right
+
+    $mt+f fullscreen; exec notify-send "Fullscreen toggled"
+    $mt+minus splitv; exec $term
+    $mt+Shift+minus splith; exec $term
+
+    $mt+Shift+space floating toggle; exec notify-send "Floating toggled"
+    $mt+Ctrl+Space     focus mode_toggle; exec notify-send "Focus mode toggle"
+
+    $mt+u focus parent; exec notify-send "Focus parent"
+    $mt+i focus child; exec notify-send "Focus child"
+    $mt+p focus parent; exec notify-send "Parent focus"
+
+    Alt+Tab workspace back_and_forth
+    $mod+BackSpace focus mode_toggle; exec notify-send "Float focus"
+
+
+    # Container layout: split
+    # $mt+e layout toggle split
+    # $mt+w layout toggle tabbed
+     # $mt+s layout toggle stacked
+     $mt+equal layout stacking; exec notify-send "Stacking"
+     $mt+bar layout tabbed; exec notify-send "Tabbed"
+     $mt+plus layout toggle split; exec notify-send "Split toggle layout"
+     $mt+t split toggle; exec notify-send "Split"
+     $mt+Alt+s sticky toggle; exec notify-send "Sticky"
+    # Show the first scratchpad window
+    $mt+o scratchpad show; exec notify-send "Show scratchpad"
+    $mt+Shift+o move scratchpad; exec notify-send "Move scratchpad"
+
+    # Brightness control
+    XF86MonBrightnessUp         exec light -A 2% && light -G | cut -d'.' -f1 > $SWAYSOCK.wob
+    XF86MonBrightnessDown       exec light -U 1% && light -G | cut -d'.' -f1 > $SWAYSOCK.wob
+    Shift+XF86MonBrightnessUp   exec light -A 2% && light -G | cut -d'.' -f1 > $SWAYSOCK.wob
+    Shift+XF86MonBrightnessDown exec light -U 5% && light -G | cut -d'.' -f1 > $SWAYSOCK.wob
+
+
+    XF86AudioRaiseVolume exec amixer sset Master 2%+ | sed -En 's/.*\[([0-9]+)%\].*/\1/p' | head -1 > $SWAYSOCK.wob
+    XF86AudioLowerVolume exec amixer sset Master 2%- | sed -En 's/.*\[([0-9]+)%\].*/\1/p' | head -1 > $SWAYSOCK.wob
+    XF86AudioMute exec amixer sset Master toggle | sed -En '/\[on\]/ s/.*\[([0-9]+)%\].*/\1/ p; /\[off\]/ s/.*/0/p' | head -1 > $SWAYSOCK.wob
+    XF86AudioMicMute exec pactl set-source-mute @DEFAULT_SOURCE@ toggle
+    # bindsym $mod4+l exec lock &
+    #
+    # Reload the configuration file
+    $mt+Shift+r reload
+    $mt+Ctrl+r restart
+    $mt+Alt+r swaymsg reload
+
+
+    $mt+Ctrl+h workspace prev
+    $mt+Ctrl+j workspace next
+    $mt+Ctrl+k workspace prev
+    $mt+Ctrl+l workspace next
+    $mt+Shift+Tab workspace prev
+    $mt+Tab workspace next
+    $mt+comma workspace prev
+    $mt+n exec alacritty -e ranger
+    $mt+Shift+n exec alacritty -e nnn
+    $mt+Shift+u exec notify-send 'test'
+    $mt+Ctrl+u exec mako -m 'test'
+    #$mt+v exec alacritty -e nvim
+    $mt+Shift+t exec alacritty -e tmux
+    $mt+Shift+w exec alacritty -e nvd
+    $mt+Shift+a exec gnome-control-center sound
+
+    $mt+period workspace next
+    $mt+Shift+comma move container to workspace prev
+    $mt+Shift+period move container to workspace next
+    $mt+bracketleft workspace prev
+    $mt+bracketright workspace next
+    $mt+Shift+bracketleft move container to workspace prev
+    $mt+Shift+bracketright move container to workspace next
+    # Switch to workspace using number row
+    $mt+1 $loc1
+    $mt+2 $loc2
+    $mt+3 $loc3
+    $mt+4 $loc4
+    $mt+5 $loc5
+    $mt+6 $loc6
+    $mt+7 $loc7
+    $mt+8 $loc8
+    $mt+9 $loc9
+    $mt+0 $loc0
+
+    # Switch to workspace using keypad
+    $mt+KP_1 $loc1
+    $mt+KP_2 $loc2
+    $mt+KP_3 $loc3
+    $mt+KP_4 $loc4
+    $mt+KP_5 $loc5
+    $mt+KP_6 $loc6
+    $mt+KP_7 $loc7
+    $mt+KP_8 $loc8
+    $mt+KP_9 $loc9
+    $mt+KP_0 $loc0
+
+    # Move window to workspace using number row
+    $mt+Shift+1 move container to $loc1
+    $mt+Shift+2 move container to $loc2
+    $mt+Shift+3 move container to $loc3
+    $mt+Shift+4 move container to $loc4
+    $mt+Shift+5 move container to $loc5
+    $mt+Shift+6 move container to $loc6
+    $mt+Shift+7 move container to $loc7
+    $mt+Shift+8 move container to $loc8
+    $mt+Shift+9 move container to $loc9
+    $mt+Shift+0 move container to $loc0
+
+    # Move window to workspace using keypad
+    $mt+Shift+KP_1 move container to $loc1
+    $mt+Shift+KP_2 move container to $loc2
+    $mt+Shift+KP_3 move container to $loc3
+    $mt+Shift+KP_4 move container to $loc4
+    $mt+Shift+KP_5 move container to $loc5
+    $mt+Shift+KP_6 move container to $loc6
+    $mt+Shift+KP_7 move container to $loc7
+    $mt+Shift+KP_8 move container to $loc8
+    $mt+Shift+KP_9 move container to $loc9
+    $mt+Shift+KP_0 move container to $loc0
+
+    # Modes
+    # exit sway
+    $mt+Alt+x exec swaymsg exit
+    $mt+Shift+m mode $mode_workspaces_monitors
+}
+
+# Load host-specific configs
+include "~/.config/sway/$(cut -d'-' -f1 /etc/hostname).conf"
+
+# Load systemd integration
+exec systemctl --user start sway-session.target
+
+bar {
+    # position top
+    #     colors {
+    #         statusline #ffffff
+    #         background #101b2a
+
+    #         # border background text
+    #         inactive_workspace $bg $bg $fg
+    #         active_workspace $fg $bg $fg
+    #         focused_workspace $fg $fg $bg
+    #         urgent_workspace $alert $alert $bg
+    #     }
+    #     font pango:ProFont 8
+    # swaybar_command waybar
+    swaybar_command waybar
+    # swaybar_command i3status-rs ~/.config/i3/status.toml
+    # status_command i3status
+}
+
+exec systemctl --user import-environment DISPLAY WAYLAND_DISPLAY SWAYSOCK
+exec hash dbus-update-activation-environment 2>/dev/null && \
+     dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCKexec systemctl --user import-environment DISPLAY WAYLAND_DISPLAY SWAYSOCK
+exec hash dbus-update-activation-environment 2>/dev/null && \
+     dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK

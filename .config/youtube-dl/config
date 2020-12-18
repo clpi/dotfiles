@@ -1,0 +1,24 @@
+# Always extract audio
+# -x
+#
+# Do not copy the mtime
+# --no-mtime
+#
+# Use this proxy
+# --proxy 127.0.0.1:3128
+#
+# Save all videos under videos dir
+-o ~/vid/%(title)s.%(ext)s
+--ignore-errors
+# --no-playlist
+# Prefer 1080p or lower resolutions
+# -f bestvideo[ext=mp4][height<1200]+bestaudio[ext=m4a]/bestvideo[ext=webm][height<1200]+bestaudio[ext=webm]/bestvideo[height<1200]+bestaudio/best[height<1200]/best
+# # Thumbnail images
+# --write-all-thumbnails
+
+# OPTIONS
+--abort-on-error
+
+# Geo Restriction
+--geo-bypass
+
