@@ -24,10 +24,15 @@ https://stallman.org/rss/rss.xml politics freesoftware
 https://dr-knz.net/feeds/all.rss.xml dev
 http://xion.io/feeds/atom.xml dev
 https://www.omgubuntu.co.uk linux
+https://www.hillelwayne.com/post/index.xml dev
+https://tjtelan.com/atom.xml dev devops
+https://hugotunius.se/feed.xml dev web
+https://joshondesign.com/feed rust dev
 
 
 # rust
 https://hoverbear.org/rss.xml rust dev blog
+https://nikhilism.com/index.xml rust dev blog
 https://tjtelan.com/atom.xml rust dev blog
 https://raphlinus.github.io/feed.xml rust dev blog
 https://this-week-in-rust.org/atom.xml rust fav dev
