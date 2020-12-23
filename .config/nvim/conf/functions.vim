@@ -74,10 +74,11 @@ function! ToggleCalendar()
   end
 endfunction
 
-let s:hidden_all = 1
-function! ToggleHiddenAll()
-    if s:hidden_all  == 0
-        let s:hidden_all = 1
+let s:netrw = 1
+function! ToggleNetrw()
+    if s:netrw  == 0
+        let s:netrw = 1
+        exe netrw_hide
         set noshowmode
         " set noruler " TODO consider leaving this on
         " set nonumber " TODO consider leaving this o
@@ -86,7 +87,7 @@ function! ToggleHiddenAll()
         set noshowcmd
         set colorcolumn=
     else
-        let s:hidden_all = 0
+        exe "normal: Vex"
         set number
         set showmode
         set ruler

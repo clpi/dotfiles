@@ -1,4 +1,7 @@
-" _------------------ ZIG
+au BufRead,BufNewFile *.svx set filetype=markdown
+au BufRead,BufNewFile *.mdx set filetype=markdown
+
+"_------------------ ZIG
 let g:zig_fmt_autosave = 0
 
 

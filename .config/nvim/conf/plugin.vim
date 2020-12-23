@@ -7,7 +7,10 @@ endif
 "" ----------- plugins ---------
 call plug#begin('~/.config/nvim/plugged')
 " -------------------XXX IDE/LINT/COMPL ----------------
+" if !has('nvim-0.5')
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
+Plug 'vn-ki/coc-clap'
+" endif
 " Plug 'dense-analysis/ale'
 " Plug 'kassio/neoterm'
 " Plug 'neomake/neomake'
@@ -21,7 +24,6 @@ Plug 'sakhnik/nvim-gdb', { 'do': ':!./install.sh \| UpdateRemotePlugins' }
 " Plug 'tpope/vim-vinegar'
 " Plug 'ms-jpq/chadtree', {'branch': 'chad', 'do': ':UpdateRemotePlugins'}
 " Plug 'lambdalisue/fern.vim'
-" Plug 'francoiscabrol/ranger.vim'
 " -------------------XXX SEARCH ------------------
 Plug 'haya14busa/is.vim'
 " Plug 'eugen0329/vim-esearch'
@@ -30,19 +32,19 @@ Plug 'haya14busa/is.vim'
 " ------------------ XXX PRODUCTIVITY ---------------
 Plug 'itchyny/calendar.vim'
 Plug 'vimwiki/vimwiki', { 'branch': 'dev' }
-Plug 'alok/notational-fzf-vim'
 Plug 'michal-h21/vim-zettel'
+Plug 'thaerkh/vim-workspace'
+"Plug 'alok/notational-fzf-vim'
 " Plug 'rmolin88/pomodoro.vim'
 " Plug 'tools-life/taskwiki'
 " Plug 'wakatime/vim-wakatime'
 " Plug 'ledger/vim-ledger'
 
 " ----------------- XXX FINDERS ---------------------
+Plug 'liuchengxu/vim-clap', { 'do': ':Clap install-binary' }
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
-Plug 'liuchengxu/vim-clap', { 'do': ':Clap install-binary' }
-Plug 'vn-ki/coc-clap'
-" Plug 'lotabout/skim', { 'dir': '~/.skim', 'do': './install' }
+Plug 'lotabout/skim', { 'dir': '~/.skim', 'do': './install' }
 " Plug 'antoinemadec/coc-fzf'
 " Plug 'pbogut/fzf-mru.vim'
 " Plug 'yuki-ycino/fzf-preview.vim', { 'do': { -> FzfPreviewInstaller() } }
@@ -77,10 +79,10 @@ Plug 'itchyny/lightline.vim'
 Plug 'tpope/vim-dadbod'
 Plug 'kristijanhusak/vim-dadbod-ui'
 Plug 'psliwka/vim-smoothie'
-Plug 'liuchengxu/vista.vim'
 Plug 'pechorin/any-jump.vim'
+Plug 'mhinz/vim-startify'
+" Plug 'liuchengxu/vista.vim'
 " Plug 'voldikss/vim-floaterm'
-" Plug 'mhinz/vim-startify'
 " Plug 'Yggdroot/indentLine'
 " Plug 'majutsushi/tagbar'
 " Plug 'Xuyuanp/scrollbar.nvim'
@@ -118,13 +120,13 @@ Plug 'skywind3000/asyncrun.vim'
 " Plug 'janko-m/vim-test'
 
 " ----------------XXX FORMATTING ------------------
-Plug 'sbdchd/neoformat', { 'on': 'Neoformat' }
 Plug 'mhartington/formatter.nvim'
-Plug 'junegunn/vim-easy-align', { 'on': '<Plug>(EasyAlign)' }
+" Plug 'junegunn/vim-easy-align', { 'on': '<Plug>(EasyAlign)' }
+" Plug 'sbdchd/neoformat', { 'on': 'Neoformat' }
 " Plug 'chiel92/vim-autoformat'
 "
 """ -------------- XXX WRITING -------------
-Plug 'junegunn/goyo.vim', { 'for': ['vimwiki','markdown','text','rst'], 'on': 'Goyo'}
+" Plug 'junegunn/goyo.vim', { 'for': ['vimwiki','markdown','text','rst'], 'on': 'Goyo'}
 " Plug 'kamykn/spelunker.vim', {'for': ['vimwiki', 'md']}
 " Plug 'reedes/vim-wordy'
 " Plug 'reedes/vim-litecorrect'
@@ -188,9 +190,9 @@ Plug 'mhartington/nvim-typescript', {'do': './install.sh', 'for': 'typescript'}
 " ------------ XXX COLORS ---------------------
 Plug 'sainnhe/sonokai'
 Plug 'challenger-deep-theme/vim', { 'as': 'challenger-deep' }
-Plug 'romgrk/doom-one.vim'
-Plug 'joshdick/onedark.vim'
 Plug 'ryanoasis/vim-devicons'
+" Plug 'romgrk/doom-one.vim'
+" Plug 'joshdick/onedark.vim'
 " Plug 'embark-theme/vim', { 'as': 'embark' }
 " Plug 'ajmwagar/vim-deus'
 " Plug 'patstockwell/vim-monokai-tasty'
@@ -199,26 +201,30 @@ Plug 'ryanoasis/vim-devicons'
 " ------------ TODO for nvim 0.5
 if has('nvim-0.5')
     " Plug 'TaDaa/vimade'
+    " Plug 'nvim-lua/popup.nvim'
+    " Plug 'nvim-lua/plenary.nvim'
     Plug 'mfussenegger/nvim-dap'
     Plug 'theHamsta/nvim-dap-virtual-text'
+    " Plug 'neovim/nvim-lspconfig'
+    " Plug 'tjdevries/lsp_extensions.nvim'
+    " Plug 'nvim-lua/completion-nvim'
+    " Plug 'nvim-lua/diagnostic-nvim'
     " Plug 'kyazdani42/nvim-web-devicons'
     " Plug 'norcalli/nvim-colorizer.lua'
     " Plug 'nvim-treesitter/nvim-treesitter'
-    " Plug 'wfxr/minimap.vim', {'do': ':!cargo install --locked code-minimap'}
-    " Plug 'nvim-lua/popup.nvim'
-    " Plug 'nvim-lua/plenary.nvim'
     " Plug 'nvim-lua/telescope.nvim'
     " Plug 'romgrk/nvim-treesitter-context'
+    " Plug 'francoiscabrol/ranger.vim'
+    " Plug 'Shougo/defx.nvim', { 'do': ':UpdateRemotePlugins' }
+    " Plug 'yazdani42/nvim-tree.lua'
+    " Plug 'wfxr/minimap.vim', {'do': ':!cargo install --locked code-minimap'}
     " Plug 'nvim-treesitter/playground'
     " Plug 'vigoux/architext.nvim'
     " Plug 'Akin909/nvim-bufferline.lua'
     " Plug 'vigoux/treesitter-context'
     " Plug 'neovim/nvim-lspconfig'
     " Plug 'tjdevries/lsp_extensions.nvim'
-    " Plug 'nvim-lua/completion-nvim'
-    " Plug 'nvim-lua/diagnostic-nvim'
     " Plug 'romgrk/barbar.nvim'
-    " Plug 'yazdani42/nvim-tree.lua'
     " Plug 'tjdevries/express_line.lua'
 
 endif

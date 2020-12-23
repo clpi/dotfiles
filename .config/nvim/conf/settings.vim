@@ -198,8 +198,8 @@ hi Keyword     gui=bold
 "hi EndOfBuffer guibg=NONE ctermbg=NONE guifg=NONE ctermfg=0
 
 "" --------------XXX Netrw (,n)------------
-let g:loaded_netrw       = 1
-let g:loaded_netrwPlugin = 1
+" let g:loaded_netrw       = 1
+" let g:loaded_netrwPlugin = 1
 
 " _---------------------- TODO Autoswitch numbers -----------------
 " augroup every
