@@ -15,6 +15,10 @@ install_brave_fedora() {
     sudo dnf install brave-browser
 }
 
+install_netdata() {
+    bash <(curl -Ss https://my-netdata.io/kickstart.sh)
+}
+
 install_nix() {
     curl -L https://nixos.org/nix/install | sh
     . ~/.nix-profile/etc/profile.d/nix.sh
@@ -87,6 +91,8 @@ install_from_cargo() {
 }
 
 install_from_copr() {
+    sudo dnf config-manager --add-repo https://rpm.releases.hashicorp.com/fedora/hashicorp.repo
+    sudo dnf -y install packer
     sudo dnf copr enable atim/nushell -y && sudo dnf install nushell -y
 }
 
