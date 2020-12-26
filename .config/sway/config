@@ -307,10 +307,12 @@ bindsym --to-code {
     $mt+Shift+q kill
 
     # Change focus
-    $mt+h focus left
-    $mt+j focus down
-    $mt+k focus up
-    $mt+l focus right
+    $mod+h focus left
+    $mod+j focus down
+    $mod+k focus up
+    $mod+l focus right
+    $mod+period workspace next
+    $mod+comma workspace prev
 # move focused window
     $mt+Shift+h move left
     $mt+Shift+j move down
@@ -364,9 +366,10 @@ bindsym --to-code {
     $mt+Alt+r swaymsg reload
 
 
+    $mt+k workspace prev
+    $mt+j workspace next
+
     $mt+Ctrl+h workspace prev
-    $mt+Ctrl+j workspace next
-    $mt+Ctrl+k workspace prev
     $mt+Ctrl+l workspace next
     $mt+Shift+Tab workspace prev
     $mt+Tab workspace next

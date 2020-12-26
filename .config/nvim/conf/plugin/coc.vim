@@ -1,6 +1,7 @@
 "" coc.nvim config -----------------
 let g:coc_global_extensions = [
   \ 'coc-highlight',
+  \ 'coc-eslint',
   \ 'coc-r-lsp',
   \ 'coc-rest',
   \ 'coc-python',

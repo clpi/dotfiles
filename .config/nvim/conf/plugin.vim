@@ -33,7 +33,7 @@ Plug 'haya14busa/is.vim'
 Plug 'itchyny/calendar.vim'
 Plug 'vimwiki/vimwiki', { 'branch': 'dev' }
 Plug 'michal-h21/vim-zettel'
-Plug 'thaerkh/vim-workspace'
+" Plug 'thaerkh/vim-workspace'
 "Plug 'alok/notational-fzf-vim'
 " Plug 'rmolin88/pomodoro.vim'
 " Plug 'tools-life/taskwiki'
@@ -158,7 +158,7 @@ Plug 'supercollider/scvim', {'for': 'supercollider'}
 Plug 'vim-pandoc/vim-pandoc'
 Plug 'vim-pandoc/vim-pandoc-syntax'
 Plug 'dart-lang/dart-vim-plugin', {'for': 'dart'}
-Plug 'mhartington/nvim-typescript', {'do': './install.sh', 'for': 'typescript'}
+" Plug 'mhartington/nvim-typescript', {'do': './install.sh', 'for': 'typescript'}
 " Plug 'CraneStation/cranelift.vim'
 " Plug 'parsonsmatt/intero-neovim', {'for': 'haskell'}
 " Plug 'dart-lang/dart-vim-plugin', { 'for': 'dart' }
