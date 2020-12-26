@@ -32,7 +32,8 @@ install_fedora() {
     \ wf-recorder waybar lsd exa zoxide tre ncdu swayidle swaylock swaybg swappy
     \ slurp sgtk-menu nwg-launchers vim-enhanced runc ripgrep fd-find pavucontrol pass
     \ mako kanshi imv vimiv mpv zathura dunst dnf-utils dnf-plugins-core bemenu azote
-    \ yank dnf-plugins-core inotify-tools
+    \ yank dnf-plugins-core inotify-tools wayfire wayfire-devel glibmm24 glibmm24-devel
+    \ wlroots-devel wlroots wf-config wf-config-devel
     sudo dnf install -y pulseaudio-libs-devel libxcb-devel openssl-devel ncurses-devel dbus-devel
 
 
