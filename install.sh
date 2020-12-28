@@ -36,6 +36,7 @@ install_fedora() {
     \ wlroots-devel wlroots wf-config wf-config-devel umr radeontop rocm-smi
     \ googler aha alot
     sudo dnf install -y pulseaudio-libs-devel libxcb-devel openssl-devel ncurses-devel dbus-devel
+    \ bcc
 
 
     echo "Installing applications..."
@@ -63,8 +64,9 @@ install_fedora() {
     \ cmake clojure cloc clang clang-devel ccls catimg buildah aws aws-doc ansible
     \ ansible-bender anaconda R R-core golang racket texlive-scheme-medium pandoc mathjax
     \ fswatch entr cockpit-selinux qt5-qtquickcontrols-examples fluid qqc2-desktop-style
+    \ qt5-qtquickcontrols2-devel
     \ libgnomeui libgnomecanvasmm26 qt5-designer kf5-kross-ui kf5-sonnet-ui
-    \ kf5-kguiaddons-devel qt5-qttools-libs-designer qt-designer-plugin-webkit qt5-qttools-libs-designercomponents qtkeychain
+    \ kf5-kguiaddons-devel qt5-qttools-libs-designer qt-designer-plugin-webkit qt5-qttools-libs-designercomponents qtkeychain csound Coin4 gamescope
     sudo dnf install R-sodium
 
 
