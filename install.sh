@@ -24,6 +24,18 @@ install_nix() {
     . ~/.nix-profile/etc/profile.d/nix.sh
 }
 
+install_pony() {
+    curl --proto '=https' --tlsv1.2 -sSf https://raw.githubusercontent.com/ponylang/ponyup/latest-release/ponyup-init.sh)
+}
+
+install_qpm() {
+    curl -O https://www.qpm.io/download/v0.11.0/linux_386/qpm && install -m 755 ./qpm /usr/local/bin/
+}
+
+install_from_qpm() {
+    qpm install com.github.benlau.quickandroid
+}
+
 # for fedora
 install_fedora() {
     echo "Installing utilities..."
@@ -34,7 +46,7 @@ install_fedora() {
     \ mako kanshi imv vimiv mpv zathura dunst dnf-utils dnf-plugins-core bemenu azote
     \ yank dnf-plugins-core inotify-tools wayfire wayfire-devel glibmm24 glibmm24-devel
     \ wlroots-devel wlroots wf-config wf-config-devel umr radeontop rocm-smi
-    \ googler aha alot
+    \ googler aha alot gsettings-qt
     sudo dnf install -y pulseaudio-libs-devel libxcb-devel openssl-devel ncurses-devel dbus-devel
     \ bcc
 
