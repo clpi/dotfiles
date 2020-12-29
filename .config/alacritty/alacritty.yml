@@ -151,7 +151,7 @@ colors:
 
   # Normal colors
   normal:
-    black:   '0x212121'
+    black:   '0x1e1c31'
     red:     '0xff8080'
     green:   '0x95ffa4'
     yellow:  '0xffe9aa'
@@ -162,7 +162,7 @@ colors:
 
   # Bright colors
   bright:
-    black:   '0x302e43'
+    black:   '0x324e4e'
     red:     '0xff5458'
     green:   '0x62d196'
     yellow:  '0xffb378'
@@ -172,7 +172,7 @@ colors:
     white:   '0xffffff'
 
   dim:
-    black:   '0x000000'
+    black:   '0x242f3f'
     red:     '0xff8080'
     green:   '0x95ffa4'
     yellow:  '0xffe9aa'
@@ -258,7 +258,7 @@ colors:
   #duration: 0
 
 # Background opacity
-background_opacity: 0.92
+background_opacity: 1
 
 # Key bindings
 #
@@ -501,8 +501,8 @@ live_config_reload: true
 #
 # You can set shell.program to the path of your favorite shell, e.g. /bin/fish.
 # Entries in shell.args are passed unmodified as arguments to the shell.
-shell:
-  program: /usr/bin/zsh
+# shell:
+#   program: /usr/bin/zsh
   #args:
     #- --command=tmux
 

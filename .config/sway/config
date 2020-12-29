@@ -26,7 +26,8 @@ set $dblue   #65b2ff
 # set $term gnome-terminal
 set $browser qutebrowser
 # set $term /home/chrisp/.cargo/bin/alacritty
-set $term alacritty
+# set $term alacritty
+set $term kitty
 set $wall ~/Pictures/Wallpapers/Wallpaper.jpg
 set $lock ~/Pictures/Wallpapers/LoggedOut.jpg
 
