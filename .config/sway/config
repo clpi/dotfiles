@@ -4,7 +4,7 @@ set $bb      #100e23
 set $br      #1a192c
 set $bd      #19172c
 set $bdd     #15132a
-set $bl     #302e43
+set $bl     #302e4e
 set $gray    #565575
 set $cl      #cce6e9
 set $fg      #f3f3f3
@@ -35,18 +35,18 @@ exec autotiling
 exec kdeconnect-indicator
 exec nm-applet --indicator
 exec mako
-exec lxpolkit
 exec ~/.azotebg
 exec /usr/lib/kdeconnectd
+exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+exec mkfifo $SWAYSOCK.wob && tail -f $SWAYSOCK.wob | wob
+exec mpd ~/.config/mpd/mpd.conf
 # exec --no-startup-id libinput-gestures
-
-
 
 # set $menu wofi --dmenu --show
 
-exec mkfifo $SWAYSOCK.wob && tail -f $SWAYSOCK.wob | wob
-
 focus_follows_mouse yes
+for_window [app_id="imv"] floating enable
+
 # swaynag_command notify-send
 
 # Set font
