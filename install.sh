@@ -64,10 +64,11 @@ install_fedora() {
     \ firefox-wayland spotify-tui spotifyd git-delta grip syncthing wabt mujs leveldb vile
     \ binaryen supercollider faust youtube-dl abook qconf kf5-knewstuff-devel
     \ latencytop grsync hotspot ddd ddcontrol-gtk qoauth protobuf flatbuffers fann
-    \ 3mux
+    \ 3mux socialscan
 
     sudo dnf install -y zsh-autosuggestions zsh-syntax-highlight
     sudo dnf install gtkglext-libs   libdazzle typelib-1_0-Retro-1-0  uget spread-sheet-widget libreport-gtk libpeas-gtk libinfinity-gtk libinfinity-gtk-devel  libchamplain-gtk
+    \ libhandy1 libhandy1-devel libhandy libhandy-devel
     # install exodus
 
     echo "Installing dev tools/languages..."
