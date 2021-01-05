@@ -110,7 +110,7 @@ install_from_pip() {
     echo "Installing from npm"
     pip3 install youtube-dl pynvim pywal autotiling cloudformation-cli
     \ cloudformation-cli-python-plugin jupyter-lab jupyter-notebook epy rainbowstream
-    \ carbon-now-cli pnpm
+    \ carbon-now-cli pnpm firebase-tools nativescript
 }
 
 install_deno() {
@@ -119,7 +119,7 @@ install_deno() {
 
 install_from_npm() {
     echo "Installing from npm"
-    sudo npm i -g fx preact-cli vercel@latest netlify-cli expo-cli ghost-cli
+    sudo npm i -g fx preact-cli vercel@latest netlify-cli expo-cli ghost-cli yo
 }
 
 install_from_cargo() {
