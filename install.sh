@@ -119,7 +119,8 @@ install_deno() {
 
 install_from_npm() {
     echo "Installing from npm"
-    sudo npm i -g fx preact-cli vercel@latest netlify-cli expo-cli ghost-cli yo
+    sudo npm i -g fx preact-cli vercel@latest netlify-cli expo-cli ghost-cli yo resume-cli
+    \ coinmon ignite-cli @vue/cli @aws/amplify-cli
 }
 
 install_from_cargo() {
