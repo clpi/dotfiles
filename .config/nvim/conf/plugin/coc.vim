@@ -125,10 +125,10 @@ set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 function! s:silent_organizeImport()
   silent! call CocAction('runCommand', 'editor.action.organizeImport')
 endfunction
-inoremap <silent><expr> <TAB>
-      \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<TAB>" :
-      \ coc#refresh()
+" inoremap <silent><expr> <TAB>
+"       \ pumvisible() ? "\<C-n>" :
+"       \ <SID>check_back_space() ? "\<TAB>" :
+"       \ coc#refresh()
 inoremap <silent><expr> <c-j>
       \ pumvisible() ? "\<C-n>" :
       \ <SID>check_back_space() ? "\<TAB>" :
