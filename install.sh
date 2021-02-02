@@ -165,6 +165,8 @@ install_linuxbrew() {
 
 install_from_brew() {
     brew install zig doctl
+    brew install achannarasappa/tap/ticker
+
 }
 
 install_geany_with_plugins() {
