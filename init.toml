@@ -1,0 +1,95 @@
+# This is a basic configuration example for SpaceVim
+
+# All SpaceVim options are below [options] snippet
+[options]
+    # set spacevim theme. by default colorscheme layer is not loaded,
+    # if you want to use more colorscheme, please load the colorscheme
+    # layer, the value of this option is a string.
+    colorscheme = "gruvbox"
+    colorscheme_bg = "dark"
+    # Disable guicolors in basic mode, many terminal do not support 24bit
+    # true colors, the type of the value is boolean, true or false.
+    enable_guicolors = true
+    # Disable statusline separator, if you want to use other value, please
+    # install nerd fonts
+    statusline_separator = "arrow"
+    statusline_iseparator = "arrow"
+    buffer_index_type = 4
+    # Display file type icon on the tabline, If you do not have nerd fonts
+    # installed, please change the value to false
+    enable_tabline_filetype_icon = true
+    # Display current mode text on statusline, by default It is disabled,
+    # only color will be changed when switch modes.
+    enable_statusline_mode = false
+
+# Enable autocomplete layer
+[[layers]]
+    name = "autocomplete"
+    auto-completion-return-key-behavior = "complete"
+    auto-completion-tab-key-behavior = "cycle"
+
+[[layers]]
+    name = "denite"
+
+[[layers]]
+    name = "tools"
+
+[[layers]]
+    name = "ui"
+
+[[layers]]
+    name = "lang#html"
+
+[[layers]]
+    name = "denite"
+
+[[layers]]
+    name = "fzf"
+
+[[layers]]
+    name = "ctrlp"
+
+[[layers]]
+    name = "colorschemes"
+
+[[layers]]
+    name = "git"
+
+[[layers]]
+    name = "github"
+
+[[layers]]
+    name = "shell"
+    default_position = "top"
+    default_height = 30
+
+[[layers]]
+  name = "lang#javascript"
+
+[[layers]]
+  name = "lang#python"
+
+[[layers]]
+  name = "lang#rust"
+
+[[layers]]
+  name = "lsp"
+# [[layers]]
+# name = "lang#typescript"
+# This is an example for adding custom plugins lilydjwg/colorizer
+[[custom_plugins]]
+    repo = "lilydjwg/colorizer"
+
+    merged = false
+
+[[custom_plugins]]
+    repo = "vimwiki/vimwiki"
+
+
+#func! myspacevim#before() abort
+#  "other configs
+#  let g:github_dashboard = { 'username': 'yourgithubuser', 'password': $GITHUB_TOKEN }
+#  let g:gista#client#default_username = 'monkeyxite'
+# endf
+# export GITHUB_TOKEN="<your 40 char token>"
+
