@@ -93,7 +93,7 @@ install_from_copr() {
 install_from_go() {
     go get github.com/miguelmota/cointop
 }
-
+pip packages
 install_rust() {
     echo "Installing rust"
     curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh # TODO
