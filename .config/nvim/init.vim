@@ -4,9 +4,14 @@ source ~/.config/nvim/conf/functions.vim
 source ~/.config/nvim/conf/keymaps.vim
 source ~/.config/nvim/conf/autocmd.vim
 source ~/.config/nvim/conf/commands.vim
+    " source ~/.config/nvim/conf/lsp.vim
 
 " PLUGIN SPECIFIC "
-source ~/.config/nvim/conf/plugin/coc.vim
+" if !has('nvim-0.5')
+    source ~/.config/nvim/conf/plugin/coc.vim
+" else
+    " source ~/.config/nvim/conf/plugin/nightly.vim
+    " source ~/.config/nvim/conf/plugin/telescope.vim
 source ~/.config/nvim/conf/plugin/general.vim
 source ~/.config/nvim/conf/plugin/fzf.vim
 source ~/.config/nvim/conf/plugin/lightline.vim
@@ -14,12 +19,21 @@ source ~/.config/nvim/conf/plugin/clap.vim
 
 
 " LANGUAGE SPECIFIC "
+source ~/.config/nvim/conf/lang/general.vim
 source ~/.config/nvim/conf/lang/rust.vim
 source ~/.config/nvim/conf/lang/markdown.vim
 source ~/.config/nvim/conf/lang/python.vim
 source ~/.config/nvim/conf/lang/latex.vim
 source ~/.config/nvim/conf/lang/vimwiki.vim
+source ~/.config/nvim/conf/lang/go.vim
+source ~/.config/nvim/conf/lang/nim.vim
+source ~/.config/nvim/conf/lang/haskell.vim
+source ~/.config/nvim/conf/lang/jsts.vim
+source ~/.config/nvim/conf/lang/htmlcss.vim
 " luafile $HOME/.config/nvim/plug.lua
+"  TODO
+"  - Figure out if I want to just cut out clap.vim (it's really slow compared to FZF)
+"    and implement curstom sources just with FZF
 "
 " KEYMAP SCHEMA
 " t : tab actions
@@ -93,6 +107,9 @@ source ~/.config/nvim/conf/lang/vimwiki.vim
 " - s: --
 " - t: toggle
 "    - b: tab bar (vista)
+"    - n: relative life numbers
+"    - a: status bar
+"    - s: spellchecker
 "     - t: terminal
 "     - u: undotree
 "     - g: git
@@ -100,6 +117,7 @@ source ~/.config/nvim/conf/lang/vimwiki.vim
 "       - c: git commits (clap)
 "       - b: buffer commits (clap)
 "       - d: diff files (clap)
+"       - s: spell checking (pencil TODO)
 " - u: --
 " - v: --
 " - w: vimwiki (TODO -- add more mappings)
@@ -115,4 +133,8 @@ source ~/.config/nvim/conf/lang/vimwiki.vim
 " , : code / filetype local actions
 " <c-c>: clap
 " <C-j> / <c-K>: smooth motion up/down
+" <C-space> : Local filetype actions
+"  - r: run
+"  - b: build
+"  - d: show documentation
 "

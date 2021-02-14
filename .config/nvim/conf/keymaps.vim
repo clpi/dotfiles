@@ -148,6 +148,7 @@ vnoremap <leader>mk :m'<-2<cr>`>my`<mzgv`yo`z
 " ------------------ set paste ------------------
 map <leader>pp :setlocal paste!<cr>
 map <leader>pt :setlocal pastetoggle<cr>
+nnoremap <silent> <space>n <ESC>:Vex<CR>
 
 " _----------------- CONVENIENT ESC _-------------
 nnoremap ; :
@@ -165,18 +166,6 @@ nnoremap g/ *zvzz
 nnoremap g? #zvzz
 " Show documentation
 
-" ---------- XXX C-s : Session commands ---------"
-nnoremap <silent> <c-s>         :CocCommand session.save<space><CR>
-nnoremap <silent> ,ss           :CocCommand session.save<space><CR>
-nnoremap <silent> <c-s><c-s>    :CocCommand session.save<space><CR>
-nnoremap <silent> <c-s>s        :CocCommand session.save<space><CR>
-nnoremap <silent> <c-s><c-l     :CocCommand session.load<CR>
-nnoremap <silent> <c-s>l        :CocCommand session.load<CR>
-nnoremap <silent> ,sl           :CocCommand session.load<CR>
-nnoremap <silent> <space>,s           :CocCommand session.load<CR>
-nnoremap <silent> ,s,           :CocList sessions<CR>
-nnoremap <silent> <c-s><cr>     :CocList sessions<CR>
-nnoremap <silent> <c-s><space>  :CocList sessions<CR>
 
 
 " -------------------- SURROUND ----------------------
@@ -240,7 +229,7 @@ nnoremap <silent> <Space>tg :Goyo!<CR>
 
 " nnoremap <silent> <Space>tu :UndotreeToggle<CR>
 " nnoremap <silent> <Space>tm :MinimapToggle<CR>
-" nnoremap <silent> <Space>tE :call ToggleNetrw(0)<CR>
+" nnoremap <silent> <Space>n :call ToggleNetrw(0)<CR>
 nnoremap <silent> ,tt       :call TerminalToggle()<cr>
 
 " --------------- CTRL CMDS --------------------

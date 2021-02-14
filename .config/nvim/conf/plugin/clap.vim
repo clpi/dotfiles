@@ -69,6 +69,8 @@ let g:clap_provider_dotfiles = {
       \            '~/.emacs.d/.local/autoloads.el',
       \            '~/.emacs.d/.local/env',
       \            '~/.cargo/config.toml',
+      \            '~/.config/wlogout/layout',
+      \            '~/.config/wlogout/style.css',
       \            '~/.oh-my-zsh/oh-my-zsh.sh',
       \            '~/.config/nvim/conf/settings.vim',
       \            '~/.config/nvim/conf/commands.vim',
@@ -95,6 +97,7 @@ let g:clap_provider_dotfiles = {
       \            '~/.config/nvim/conf/lang/latex.vim',
       \            '~/.config/nvim/coc-settings.json',
       \            '~/.config/waybar/modules/crypto/crypto.ini',
+      \            '~/.config/waybar/taskbar',
       \            '~/.config/ranger/rc.conf',
       \            '~/.config/ranger/rifle.conf',
       \            '~/.config/dijo/config.toml',
@@ -364,7 +367,8 @@ nmap <silent> <space><space>c :Clap coc_commands<CR>
 nmap <silent> <space><space>C :Clap command<CR>
 nmap <silent> <space><space>d :Clap coc_diagnostics<CR>
 nmap <silent> <space><space>D :Clap files ~/wiki/diary<CR>
-nmap <silent> <space><space>e :Clap coc_extensions<CR>
+nmap <silent> <space><space>e :Clap filer<CR>
+nmap <silent> <space><space>E :Clap coc_extensions<CR>
 nmap <silent> <space><space>f :Clap files<cr>
 nmap <silent> <space><space>g :Clap grep<cr>
 nmap <silent> <space><space>G :Clap grep2<cr>

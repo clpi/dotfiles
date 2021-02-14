@@ -4,7 +4,7 @@ set $bb      #100e23
 set $br      #1a192c
 set $bd      #19172c
 set $bdd     #15132a
-set $bl     #302e43
+set $bl     #302e4e
 set $gray    #565575
 set $cl      #cce6e9
 set $fg      #f3f3f3
@@ -26,7 +26,8 @@ set $dblue   #65b2ff
 # set $term gnome-terminal
 set $browser qutebrowser
 # set $term /home/chrisp/.cargo/bin/alacritty
-set $term alacritty
+# set $term alacritty
+set $term kitty
 set $wall ~/Pictures/Wallpapers/Wallpaper.jpg
 set $lock ~/Pictures/Wallpapers/LoggedOut.jpg
 
@@ -34,18 +35,18 @@ exec autotiling
 exec kdeconnect-indicator
 exec nm-applet --indicator
 exec mako
-exec lxpolkit
 exec ~/.azotebg
 exec /usr/lib/kdeconnectd
+exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+exec mkfifo $SWAYSOCK.wob && tail -f $SWAYSOCK.wob | wob
+exec mpd ~/.config/mpd/mpd.conf
 # exec --no-startup-id libinput-gestures
-
-
 
 # set $menu wofi --dmenu --show
 
-exec mkfifo $SWAYSOCK.wob && tail -f $SWAYSOCK.wob | wob
-
 focus_follows_mouse yes
+for_window [app_id="imv"] floating enable
+
 # swaynag_command notify-send
 
 # Set font
@@ -307,10 +308,12 @@ bindsym --to-code {
     $mt+Shift+q kill
 
     # Change focus
-    $mt+h focus left
-    $mt+j focus down
-    $mt+k focus up
-    $mt+l focus right
+    $mod+h focus left
+    $mod+j focus down
+    $mod+k focus up
+    $mod+l focus right
+    $mod+period workspace next
+    $mod+comma workspace prev
 # move focused window
     $mt+Shift+h move left
     $mt+Shift+j move down
@@ -364,9 +367,10 @@ bindsym --to-code {
     $mt+Alt+r swaymsg reload
 
 
+    $mt+k workspace prev
+    $mt+j workspace next
+
     $mt+Ctrl+h workspace prev
-    $mt+Ctrl+j workspace next
-    $mt+Ctrl+k workspace prev
     $mt+Ctrl+l workspace next
     $mt+Shift+Tab workspace prev
     $mt+Tab workspace next
