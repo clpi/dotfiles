@@ -1,21 +1,18 @@
 "" coc.nvim config -----------------
 let g:coc_global_extensions = [
   \ 'coc-highlight',
+  \ 'coc-eslint',
   \ 'coc-r-lsp',
   \ 'coc-rest',
   \ 'coc-python',
-  \ 'coc-rust-analyzer',
-  \ 'coc-prettier',
   \ 'coc-post',
-  \ 'coc-tsserver',
-  \ 'coc-tslint-plugin',
   \ 'coc-css',
   \ 'coc-json',
   \ 'coc-yaml',
   \ 'coc-html',
   \ 'coc-sql',
   \ 'coc-vetur',
-  \ 'coc-svelte',
+  \ 'coc-svelte-fork',
   \ 'coc-xml',
   \ 'coc-snippets',
   \ 'coc-utils',
@@ -24,6 +21,7 @@ let g:coc_global_extensions = [
   \ 'coc-clangd',
   \ 'coc-actions',
   \ 'coc-explorer',
+  \ 'coc-jest',
   \ 'coc-inline-jest',
   \ 'coc-vimtex',
   \ 'coc-import-cost',
@@ -32,9 +30,6 @@ let g:coc_global_extensions = [
   \ 'coc-docker',
   \ 'coc-deno',
   \ 'coc-git',
-  \ 'coc-template',
-  \ 'coc-bookmark',
-  \ 'coc-template',
   \ 'coc-db',
   \ 'coc-floatinput',
   \ 'coc-tag',
@@ -47,9 +42,13 @@ let g:coc_global_extensions = [
   \ 'coc-flutter-tools',
   \ ]
 " \ 'coc-highlight',
+" \ 'coc-prettier',
+  " \ 'coc-tsserver',
+  " \ 'coc-tslint-plugin',
 " coc-rome, coc-flow, coc-flutter, coc-fsharp, coc-pairs (no autopairs)
 " coc-yank, coc-texlab, coc-fzf-preview, coc-webpack, coc-bibtex, coc-diagnostic, coc-haxe
 " cc-gitignore, coc-lit-html, coc-purity, coc-ccls, coc-rest-client
+" \ 'coc-rust-analyzer',
 
 let g:coc_explorer_global_presets = {
 \   'floating': {
@@ -197,6 +196,14 @@ nmap <silent> <space>gr <Plug>(coc-references)
 nmap <silent> <space>d, <Plug>(coc-diagnostic-prev)
 nmap <silent> <space>d. <Plug>(coc-diagnostic-next)
 
+nmap <silent> ,<space>, <Plug>(coc-diagnostic-prev)
+nmap <silent> ,<space>. <Plug>(coc-diagnostic-next)
+nmap <silent> ,<space>l :<C-u>call CocActionAsync('codeLensAction')<CR>
+nmap <silent> ,<space>d <Plug>(coc-definition)
+nmap <silent> ,<space>D <Plug>(coc-declaration)
+nmap <silent> ,<space>t <Plug>(coc-type-definition)
+nmap <silent> ,<space>c <Plug>(coc#float#close_all)
+
 " ------ ,l / ,a CocAction and CodeLens ----
 nmap <silent> ,l :<C-u>call CocActionAsync('codeLensAction')<CR>
 if has('nvim')
@@ -246,8 +253,6 @@ nmap <silent> <space>d> <Plug>(coc-diagnostic-next-error)
 vmap <silent> <space>cf  <Plug>(coc-format-selected)
 
 nmap <silent> <space>a :CocAction<CR>
-nmap <silent> ,<space> :CocAction<CR>
-nmap <silent> c<space> :CocAction<CR>
 nmap <silent> c,, :CocAction<CR>
 xmap c,f  <Plug>(coc-format-selected)
 nmap c,f  <Plug>(coc-format-selected)
@@ -337,25 +342,28 @@ nnoremap <silent> ,cr  :<C-u>CocListResume<CR>
 nnoremap <silent> ,conf :<C-u>CocConfig<CR>
 nnoremap <silent> ,ct :<C-u>CocList tags<CR>
 
+" ---------- XXX C-s : Session commands ---------"
+nnoremap <silent> <c-s>         :CocCommand session.save<space><CR>
+nnoremap <silent> ,ss           :CocCommand session.save<space><CR>
+nnoremap <silent> <c-s><c-s>    :CocCommand session.save<space><CR>
+nnoremap <silent> <c-s>s        :CocCommand session.save<space><CR>
+nnoremap <silent> <c-s><c-l     :CocCommand session.load<CR>
+nnoremap <silent> <c-s>l        :CocCommand session.load<CR>
+nnoremap <silent> ,sl           :CocCommand session.load<CR>
+nnoremap <silent> <space>,s           :CocCommand session.load<CR>
+nnoremap <silent> ,s,           :CocList sessions<CR>
+nnoremap <silent> <c-s><cr>     :CocList sessions<CR>
+nnoremap <silent> <c-s><space>  :CocList sessions<CR>
+
 " Coc list (default, no clap)
-" nnoremap <silent> <space><space><space> <esc>:CocList lists<cr>
+" nnoremap <silent> space><space><space> <esc>:CocList lists<cr>
 " nnoremap <silent> <space>a<space> <ESC>:CocAction<CR>
 " nnoremap <silent> <space>c<space> <ESC>:CocList commands<CR>
 
-nnoremap <silent> ,<space>ls <ESC>:CocList location<CR>
-nnoremap <silent> ,<space>h <ESC>:CocList cmdhistory<CR>
-nnoremap <silent> ,<space>L <ESC>:CocList lines<CR>
-" nnoremap <silent> ,<space>fl <ESC>:CocList fuzzy_lines<CR>
-nnoremap <silent> ,<space>ll <ESC>:CocList locationlist<CR>
-
-nnoremap <silent> ,<space>n :CocNext<cr>
-nnoremap <silent> ,<space>p :CocPrev<cr>
-nnoremap <silent> ,<space>r :<C-u>CocListResume<CR>
-
-nnoremap <silent> ,<space>S <ESC>:CocList sessions<CR>
-nnoremap <silent> ,<space>ss  :<C-u>CocCommand session.save<CR>
-nnoremap <silent> ,<space>sl  :<C-u>CocCommand session.load<CR>
-nnoremap <silent> ,<space>sr :<C-u>CocCommand session.restart<CR>
+" nnoremap <silent> ,<space>S <ESC>:CocList sessions<CR>
+" nnoremap <silent> ,<space>ss  :<C-u>CocCommand session.save<CR>
+" nnoremap <silent> ,<space>sl  :<C-u>CocCommand session.load<CR>
+" nnoremap <silent> ,<space>sr :<C-u>CocCommand session.restart<CR>
 
 " if has('nvim')
 "   function! s:is_float(winnr) abort

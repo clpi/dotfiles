@@ -97,3 +97,6 @@ let g:nvimgdb_config_override = {
   \ 'set_tkeymaps': "NvimGdbNoTKeymaps",
   \ }
 
+
+nnoremap <silent> K <ESC>:WintabsPrevious<CR>
+nnoremap <silent> J <ESC>:WintabsNext<CR>

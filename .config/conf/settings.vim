@@ -170,12 +170,17 @@ let g:challenger_deep_terminal_italics=1
 " colorscheme molokai
 " colorscheme monokai-phoenix
 " hi link TSInclude Keyword
-if exists('$TMUX')
-    colorscheme badwolf
-else
+" if exists('$TMUX')
+"     colorscheme challenger_deep
+"     hi Normal guibg=NONE
+
+" else
     colorscheme challenger_deep
     hi Comment gui=italic
-endif
+" endif
+set termguicolors
+" set TERM=screen-256color
+set t_co=256
 hi Structure      gui=bold
 hi Keyword     gui=bold
 " hi Normal      guibg=NONE ctermbg=NONE guifg=#cbe3e7
@@ -198,8 +203,8 @@ hi Keyword     gui=bold
 "hi EndOfBuffer guibg=NONE ctermbg=NONE guifg=NONE ctermfg=0
 
 "" --------------XXX Netrw (,n)------------
-let g:loaded_netrw       = 1
-let g:loaded_netrwPlugin = 1
+" let g:loaded_netrw       = 1
+" let g:loaded_netrwPlugin = 1
 
 " _---------------------- TODO Autoswitch numbers -----------------
 " augroup every
